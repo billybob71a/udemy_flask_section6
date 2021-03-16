@@ -18,9 +18,6 @@ app.config['SQLALCHEMY_ECHO'] = True
 app.secret_key = 'jose'
 api = Api(app)
 
-@app.before_request
-def create_tables():
-    db.create_all()
 
 jwt = JWT(app, authenticate, identity) #creates a new endpoint with /auth
 
